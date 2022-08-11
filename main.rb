@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 require 'pathname'
 require 'fileutils'
@@ -22,6 +23,8 @@ lint_reporter = get_env_variable('AC_LINT_REPORTER')
 lint_strict = get_env_variable('AC_LINT_STRICT')
 lint_quiet = get_env_variable('AC_LINT_QUIET')
 output_path = get_env_variable('AC_OUTPUT_DIR')
+
+run_command('brew install swiftlint') if `which swiftlint`.empty?
 
 report_file = 'swiftlint_result'
 case lint_reporter
