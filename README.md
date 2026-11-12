@@ -12,3 +12,13 @@ Required Input Variables
 
 Output Variable
 - `$AC_LINT_OUTPUT_PATH`: The path of the output file.
+
+## Running tests
+
+Requires the [RSpec](https://rspec.info) gem and the Ruby standard library (Coverage). No Gemfile or Bundler needed.
+
+```bash
+ruby test/test_main.rb
+```
+
+A coverage report is printed at the end of each run. The tests never run the real `swiftlint`, `brew` or `git`: stub executables are put first on `PATH` inside a temporary directory.
