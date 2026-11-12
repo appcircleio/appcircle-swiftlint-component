@@ -16,6 +16,8 @@ def run_command(cmd)
   output
 end
 
+if __FILE__ == $PROGRAM_NAME
+
 repository_path = get_env_variable('AC_REPOSITORY_DIR') || abort('Missing repo path.')
 lint_path = get_env_variable('AC_LINT_PATH') || '.'
 lint_range = get_env_variable('AC_LINT_RANGE')
@@ -88,3 +90,5 @@ File.open(ENV['AC_ENV_FILE_PATH'], 'a') do |f|
 end
 
 exit 0
+
+end # if __FILE__ == $PROGRAM_NAME
